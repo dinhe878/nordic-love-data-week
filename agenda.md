@@ -56,7 +56,7 @@ Looking for the previous programme? See the [2026 agenda]({{ site.baseurl }}{% l
     <tr>
       <td>10:00<br>45 minutes<br>Time zone to be confirmed</td>
       <td>Making one size fit all - The national collaboration behind FAIR Wizard Norway</td>
-      <td><a href=https://uio.zoom.us/j/63661379513?pwd=bfbaSnugtUuR8XNcPyVwX5BPWRKA5n.1>Zoom meeting</a></td>
+      <td><a href="https://uio.zoom.us/j/63661379513?pwd=bfbaSnugtUuR8XNcPyVwX5BPWRKA5n.1">Zoom meeting</a></td>
       <td>
         <p>Through the project <em>Data Management Plans: Support package for Norwegian higher education libraries</em>, extensive work was done to align understanding and negotiate DMP purpose, stakeholders, machine-actionability, best practice, educational values, and requirements in the context of Norwegian legislation and local routines. The project developed a common DMP questionnaire and guidance resources which are now maintained by an editorial team. This presentation focuses on the process and importance of aligning expectations before launching a service.</p>
         <p><strong>Format:</strong> Presentation<br>
@@ -70,7 +70,7 @@ Looking for the previous programme? See the [2026 agenda]({{ site.baseurl }}{% l
     <tr>
       <td>11:00<br>45 minutes<br>Time zone to be confirmed</td>
       <td>Start using FAIR Wizard Norway</td>
-      <td><a href=https://uio.zoom.us/j/63661379513?pwd=bfbaSnugtUuR8XNcPyVwX5BPWRKA5n.1>Zoom meeting</a></td>
+      <td><a href="https://uio.zoom.us/j/63661379513?pwd=bfbaSnugtUuR8XNcPyVwX5BPWRKA5n.1">Zoom meeting</a></td>
       <td>
         <p>Start writing your data management plan using FAIR Wizard Norway in line with funder requirements. Prepare for publishing FAIR data, establish good research data management routines and avoid pitfalls in your research project. FAIR Wizard Norway allows for easy collaboration on data management plans.</p>
         <p><strong>Format:</strong> Workshop<br>
@@ -84,7 +84,7 @@ Looking for the previous programme? See the [2026 agenda]({{ site.baseurl }}{% l
     <tr>
       <td>13:00<br>45 minutes<br>Time zone to be confirmed</td>
       <td>Sámi research data – governance, sovereignty and the CARE principles</td>
-      <td><a href=https://uio.zoom.us/j/62485542097?pwd=uthy7y8RcKA7aRl1ZUUKzC5UWinZd7.1>Zoom meeting</a></td>
+      <td><a href="https://uio.zoom.us/j/62485542097?pwd=uthy7y8RcKA7aRl1ZUUKzC5UWinZd7.1">Zoom meeting</a></td>
       <td>
         <p>How do the CARE principles intersect with Sámi ethical guidelines for health research data? What governance structures need to change in order to have Sámi governance and data sovereignty for research data generally, and health research data particularly?</p>
         <p><strong>Format:</strong> Presentation<br>
@@ -116,7 +116,7 @@ Looking for the previous programme? See the [2026 agenda]({{ site.baseurl }}{% l
     <tr>
       <td>10:00<br>45 minutes<br>Time zone to be confirmed</td>
       <td>Sustainability, Community and Security; Research Data Infrastructure in the Age of AI<br><strong>Awaiting confirmation</strong></td>
-      <td><a href=https://uio.zoom.us/j/66829257611?pwd=5QU3QDZmkInNMbObcxez6rNhWzaMvc.1>Zoom meeting</a></td>
+      <td><a href="https://uio.zoom.us/j/66829257611?pwd=5QU3QDZmkInNMbObcxez6rNhWzaMvc.1">Zoom meeting</a></td>
       <td>
         <p>Hicks addresses the challenges of providing security, sustainability and community-driven infrastructure, as AI is changing the infrastructural demands. The Australian Research Data Commons (ARDC) is a national research data infrastructure aiming to accelerate research and innovation by driving excellence in the creation, analysis and retention of high-quality data assets. The presentation is a repeat of Hicks's keynote at the EOSC symposium in Florence in October 2026.</p>
         <p><strong>Format:</strong> Presentation<br>
