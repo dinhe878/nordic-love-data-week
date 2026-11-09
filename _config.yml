@@ -1,8 +1,6 @@
 title: Nordic Love Data Week
 nav_title: Nordic Love Data Week<br><small><span class="hide-very-narrow">with</span> Nordic Universities (08-12 February 2027)</small>
 event_date: 8-12 Feb 2027
-registration_opens_date: Jan 2026
-registration_closes_date: 8 Feb 2026
 event_year: 2027
 author: Nordic Love Data Week Team
 mailbox_address: dinghe@dtu.dk
@@ -112,10 +110,11 @@ github_repo: dinhe878/love-data-week-2026
 
 theme: minima
 
-# The actual visibility of the nav bar links is influenced by the event_status
-# and registration_status flags below
+exclude:
+  - registration.md
+
+# The visibility of nav bar links is influenced by the event_status flag below.
 header_pages:
-  # - registration.md (no need hence removed)
   - agenda.md
   - where-is-the-data-day.md
   - activities.md
