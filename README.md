@@ -176,7 +176,7 @@ See [Jekyll Liquid documentation](https://jekyllrb.com/docs/liquid/) for more.
 
 ## Contributing and Publishing
 
-The `main` branch is the GitHub Pages publishing source. Use a short-lived branch and a pull request for each change:
+The `main` branch is the GitHub Pages publishing source. Use a short-lived branch and a pull request for each change. For example, working on the 2027 agenda:
 
 1. Update `main` and create a branch:
    ```bash
@@ -191,7 +191,11 @@ The `main` branch is the GitHub Pages publishing source. Use a short-lived branc
    git commit -m "Update 2027 agenda"
    git push -u origin content/2027-agenda
    ```
-4. Open a pull request against `main` and request review.
+4. Open a pull request against `main` and optionally request a review.
+
+> [!IMORTANT]
+> By defualt it will pull request against `JGIBristol/hackathon-template` beacuse this repo is folked from it, so make sure that you pull request agains the `main` of this repo.
+
 5. After merging, check the live site and delete the branch.
 
 The site normally rebuilds and deploys within a few minutes after a merge. Force-refresh your browser if necessary.
