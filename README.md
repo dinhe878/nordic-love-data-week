@@ -85,14 +85,13 @@ Main settings to update:
 - **`nav_title`** - Site name and strapline in the top navigation
 - **`event_date`** - Event dates (displayed throughout the site)
 - **`event_year`** - Current event year, used to identify archive pages
-- **`registration_opens_date`** / **`registration_closes_date`** - Registration period dates
 - **`author`** - Primary contact/organizing institution
 - **`mailbox_address`** - Contact email address (recommended: shared mailbox)
 - **`description`** - Short event description (used by search engines and social media)
 - **`url`** - Published site URL (without trailing slash)
 - **`github_repo`** - GitHub repository name
 - **`event_status`** - Controls page visibility based on event timeline (`soon`, `now`, `over`, `demo`)
-- **`registration_status`** - Controls registration form visibility (`soon`, `open`, `closed`, `demo`)
+- **`registration_status`** - Controls the form link on the disabled registration template (`soon`, `open`, `closed`, `demo`)
 - **`team`** - Team members with names, emails, images, affiliations, and social links
 
 ### Content Pages
@@ -101,7 +100,7 @@ Key pages to customize:
 
 - **`index.md`** - Homepage/landing page
 - **`agenda.md`** - Event schedule; currently contains the 2026 agenda
-- **`registration.md`** - Registration form and information
+- **`registration.md`** - Disabled registration page template; excluded from the build
 - **`activities.md`** - Global activities; currently contains 2026 content
 - **`about.md`** - Information about the event and organizing team
 - **`videos-slides.md`** - Event recordings and presentation slides; currently contains 2026 content
@@ -109,6 +108,17 @@ Key pages to customize:
 - **`2026/`** - Archived 2026 event pages
 - **`code-of-conduct.md`** - Event code of conduct
 - **`faq.md`** - Frequently asked questions
+
+### Enabling a registration page
+
+The site does not currently use a central registration page. `registration.md` is retained as a template but excluded from the Jekyll build and navigation; individual events can still link to their own registration pages.
+
+If central registration is needed in a future year:
+
+1. Update `registration.md` with the current event details and replace its placeholder form URL with a real, tested link. Review what the form collects and its privacy and data-retention arrangements.
+2. Remove `registration.md` from `exclude` in `_config.yml`, and add it to `header_pages` if it should appear in navigation.
+3. Set `registration_status` to `soon`, `open`, or `closed` as appropriate. The page's `event_status` front matter also controls when it appears in the navigation; update it if needed.
+4. Build and preview the site, checking the page and form link before publishing.
 
 ### Assets
 
