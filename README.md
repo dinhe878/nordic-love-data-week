@@ -1,16 +1,12 @@
-# Nordic Love Data Week 2026
+# Nordic Love Data Week
 
-A public-facing website for the Nordic Love Data Week event (9–13 February 2026), built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/).
+The public website for Nordic Love Data Week, an annual event promoting research data management, sharing, and literacy across the Nordic region. It is built with [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/).
 
-**Live site:** https://dinghe.github.io/love-data-week-2026
+**Live site:** https://www.nordiclovedataweek.org/
 
 ## About the Event
 
-Love Data Week is an international celebration of data, taking place every year during the week of Valentine's day. This year, for the first time, Nordic Love Data Week is organized by a consortium of Nordic universities, aiming to promote awareness and best practices in research data management, data sharing, and data literacy across the Nordic region.
-
-**Event dates:** 9–13 February 2026  
-**Registration opens:** 12 January 2026  
-**Registration closes:** 9 February 2026
+Love Data Week is an international celebration of data, taking place every year during the week of Valentine's Day. Nordic Love Data Week is organized by a consortium of Nordic universities.
 
 For more information about international activities, visit the [ICPSR event website](https://www.icpsr.umich.edu/sites/icpsr/about/news-events/international-love-data-week).
 
@@ -43,8 +39,8 @@ This website is built with Jekyll, which requires [Ruby](https://www.ruby-lang.o
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/dinhe878/love-data-week-2026.git
-   cd love-data-week-2026
+   git clone https://github.com/dinhe878/nordic-love-data-week.git
+   cd nordic-love-data-week
    ```
 
 2. **Create a Python virtual environment (optional, for data-related scripts):**
@@ -63,12 +59,6 @@ This website is built with Jekyll, which requires [Ruby](https://www.ruby-lang.o
    bundle install
    ```
    
-   If you encounter permission errors, delete the lockfile and regenerate it:
-   ```bash
-   rm Gemfile.lock
-   bundle install
-   ```
-
 5. **Run the local development server:**
    ```bash
    bundle exec jekyll serve
@@ -76,13 +66,12 @@ This website is built with Jekyll, which requires [Ruby](https://www.ruby-lang.o
    
    Then visit: [http://127.0.0.1:4000](http://127.0.0.1:4000)
 
-6. **Auto-reload on config changes:**
-   If you modify `_config.yml`, you'll need to restart the server (Ctrl+C, then re-run `bundle exec jekyll serve`). For automatic reloading, install guard:
+6. **Check the build:**
    ```bash
-   bundle add guard guard-jekyll-plus
-   bundle exec guard init jekyll
-   bundle exec guard
+   bundle exec jekyll build
    ```
+
+   If you modify `_config.yml`, restart the development server (Ctrl+C, then re-run `bundle exec jekyll serve`).
 
 ## Editing the Website
 
@@ -95,6 +84,7 @@ Main settings to update:
 - **`title`** - Site title used in title bar and various places
 - **`nav_title`** - Site name and strapline in the top navigation
 - **`event_date`** - Event dates (displayed throughout the site)
+- **`event_year`** - Current event year, used to identify archive pages
 - **`registration_opens_date`** / **`registration_closes_date`** - Registration period dates
 - **`author`** - Primary contact/organizing institution
 - **`mailbox_address`** - Contact email address (recommended: shared mailbox)
@@ -110,19 +100,20 @@ Main settings to update:
 Key pages to customize:
 
 - **`index.md`** - Homepage/landing page
-- **`agenda.md`** - Event schedule
+- **`agenda.md`** - Event schedule; currently contains the 2026 agenda
 - **`registration.md`** - Registration form and information
-- **`projects.md`** - Hackathon/project listings
-- **`activities.md`** - Links to helpful activities
+- **`activities.md`** - Global activities; currently contains 2026 content
 - **`about.md`** - Information about the event and organizing team
-- **`videos-slides.md`** - Event recordings and presentation slides
+- **`videos-slides.md`** - Event recordings and presentation slides; currently contains 2026 content
+- **`where-is-the-data-day.md`** - Where's the Data Day; currently contains 2026 content
+- **`2026/`** - Archived 2026 event pages
 - **`code-of-conduct.md`** - Event code of conduct
 - **`faq.md`** - Frequently asked questions
 
 ### Assets
 
 - **`assets/logo.png`** - Logo displayed in the top navigation bar
-- **`assets/advert.png`** - Image used when sharing on social media
+- **`assets/`** - Images, PDFs, stylesheets, and other shared or event-specific files
 - **Team member images** - Store profile photos in `assets/` (referenced in `_config.yml`)
 
 ### Adding Team Members
@@ -149,7 +140,7 @@ Team members are automatically displayed on the `about.md` page.
 
 ### Adding Navigation Pages
 
-1. Create a new Markdown file in the repository root
+1. Create a new Markdown file in an appropriate location
 2. Add front matter with `menu_title` and `menu_icon` (Bootstrap Icons):
    ```markdown
    ---
@@ -158,7 +149,7 @@ Team members are automatically displayed on the `about.md` page.
    menu_icon: icon-name
    ---
    ```
-3. Add the filename to `header_pages` in `_config.yml`
+3. Add the source path to `header_pages` in `_config.yml`
 
 ### Useful Liquid Tags
 
@@ -173,22 +164,37 @@ Team members are automatically displayed on the `about.md` page.
 
 See [Jekyll Liquid documentation](https://jekyllrb.com/docs/liquid/) for more.
 
-## Publishing Changes
+## Contributing and Publishing
 
-After making changes on a branch and testing:
+The `main` branch is the GitHub Pages publishing source. Use a short-lived branch and a pull request for each change:
 
-```bash
-git add .
-git commit -m "Describe your changes"
-git push -u origin <branch-name>
-```
+1. Update `main` and create a branch:
+   ```bash
+   git switch main
+   git pull --ff-only origin main
+   git switch -c content/2027-agenda
+   ```
+2. Make changes, then test with `bundle exec jekyll build` and `bundle exec jekyll serve`.
+3. Commit and push your branch:
+   ```bash
+   git add .
+   git commit -m "Update 2027 agenda"
+   git push -u origin content/2027-agenda
+   ```
+4. Open a pull request against `main` and request review.
+5. After merging, check the live site and delete the branch.
 
-Open a pull request and request review. After the pull request is merged into `main`, the site will automatically rebuild and deploy to GitHub Pages (usually within a few minutes). Force-refresh your browser to see changes.
+The site normally rebuilds and deploys within a few minutes after a merge. Force-refresh your browser if necessary.
 
 ## Project Structure
 
 ```
 .
+├── 2026/                    # Archived 2026 event pages
+├── index.md                 # Current event homepage
+├── agenda.md                # Unversioned agenda (currently 2026)
+├── videos-slides.md         # Unversioned recordings (currently 2026)
+├── about.md                 # General event and team information
 ├── _config.yml              # Main configuration file
 ├── _includes/               # Reusable page components
 │   ├── header.html
@@ -204,8 +210,7 @@ Open a pull request and request review. After the pull request is merged into `m
 │   └── 02-project-title.md
 ├── assets/                  # Images and stylesheets
 │   ├── main.scss
-│   ├── logo.png
-│   └── advert.png
+│   └── logo.png
 ├── activities/              # Event activities and templates
 │   ├── environment/         # Python environment files
 │   └── templates/           # Email and form templates
@@ -213,20 +218,9 @@ Open a pull request and request review. After the pull request is merged into `m
 └── *.md                     # Main content pages (index, agenda, etc.)
 ```
 
-## Contributing
+## Yearly Archives
 
-To contribute to this website:
-
-1. Update `main` and create a short-lived branch for your changes, such as `content/2027-agenda` or `fix/navigation-links`.
-2. Make edits and test locally with `bundle exec jekyll build` and `bundle exec jekyll serve`.
-3. Commit and push your branch.
-4. Submit a pull request for review. Once merged, delete the branch.
-
-The `main` branch is the GitHub Pages publishing source; merged changes are published to the live website.
-
-### Yearly archives
-
-The 2026 archive lives in `2026/` and is published under `/2026/`. It has its own copies of the agenda, videos and slides, global activities, and Where's the Data Day pages. The original unversioned pages remain in place for existing links, so changes that should appear in both copies must be applied to both.
+The [2026 archive](https://www.nordiclovedataweek.org/2026/) lives in `2026/`. It has its own copies of the agenda, videos and slides, global activities, and Where's the Data Day pages. The original unversioned pages remain in place for existing links, so changes that should appear in both copies must be applied to both.
 
 Keep archive links pointed at year-specific pages, and preserve the referenced assets. When moving a page listed in `header_pages`, update its source path in `_config.yml`. Before repurposing an unversioned page for a new year, ensure the previous year's content and links are preserved in its archive.
 
@@ -242,5 +236,4 @@ See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-For questions about the Nordic Love Data Week, please contact:  
-**{{ site.author }}** - [{{ site.mailbox_address }}](mailto:{{ site.mailbox_address }})
+For questions about Nordic Love Data Week, contact the team via the [About page](https://www.nordiclovedataweek.org/about/).
