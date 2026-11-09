@@ -116,11 +116,17 @@ exclude:
 # The visibility of nav bar links is influenced by the event_status flag below.
 header_pages:
   - agenda.md
-  - where-is-the-data-day.md
-  - activities.md
-  - videos-slides.md
+  - 2027/activities.md
+  - 2027/videos-slides.md
   - about.md
   - 2026/index.md
+
+archive_2026_header_pages:
+  - 2026/index.md
+  - 2026/agenda.md
+  - 2026/where-is-the-data-day.md
+  - 2026/activities.md
+  - 2026/videos-slides.md
 
 # Event status
 #   soon = event is yet to happen

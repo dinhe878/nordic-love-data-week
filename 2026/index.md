@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Nordic Love Data Week 2026
-menu_title: 2026
+menu_title: Archive
 menu_icon: archive
 year: 2026
 permalink: /2026/

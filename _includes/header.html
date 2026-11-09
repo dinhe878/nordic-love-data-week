@@ -1,10 +1,21 @@
 <header class="site-header" role="banner">
 
   <div class="wrapper">
-    {%- assign default_paths = site.pages | map: "path" -%}
-    {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="site-title {% if page.url == "/" | relative_url %}active{% endif %}" rel="author" href="{{ "/" | relative_url }}">
-      {% if site.nav_title %}
+    {%- assign archive_prefix = page.url | slice: 0, 6 -%}
+    {%- assign is_2026_archive = false -%}
+    {%- if archive_prefix == "/2026/" -%}
+      {%- assign is_2026_archive = true -%}
+      {%- assign page_paths = site.archive_2026_header_pages -%}
+      {%- assign home_url = "/2026/" -%}
+    {%- else -%}
+      {%- assign default_paths = site.pages | map: "path" -%}
+      {%- assign page_paths = site.header_pages | default: default_paths -%}
+      {%- assign home_url = "/" -%}
+    {%- endif -%}
+    <a class="site-title {% if page.url == home_url %}active{% endif %}" rel="author" href="{{ home_url | relative_url }}">
+      {% if is_2026_archive %}
+        {{ site.title | escape }}<br><small>9–13 February 2026</small>
+      {% elsif site.nav_title %}
         {{ site.nav_title }}
       {% else %}
         {{ site.title | escape }}
@@ -26,10 +37,12 @@
           {%- for path in page_paths -%}
             {%- assign node = site.pages | where: "path", path | first -%}
             {%- if node.title -%}
-            {%- if (node.event_status contains site.event_status) or (node.event_status == blank) or (site.event_status == "demo") -%}
+            {%- if is_2026_archive or (node.event_status contains site.event_status) or (node.event_status == blank) or (site.event_status == "demo") -%}
               <a class="page-link {% if page.url == node.url %}active{% endif %}" href="{{ node.url | relative_url }}">
                 {% if node.menu_icon %}<i class="bi bi-{{ node.menu_icon | escape }}"></i>{% endif %}
-                {% if node.menu_title %}
+                {% if is_2026_archive and node.url == "/2026/" %}
+                  <span>Home</span>
+                {% elsif node.menu_title %}
                   <span>{{ node.menu_title | escape }}</span>
                 {% else %}
                   <span>{{ node.title | escape }}</span>
@@ -38,6 +51,9 @@
             {%- endif -%}
             {%- endif -%}
           {%- endfor -%}
+          {%- if is_2026_archive -%}
+            <a class="page-link" href="{{ '/' | relative_url }}">Current event</a>
+          {%- endif -%}
         </div>
       </nav>
     {%- endif -%}

@@ -136,10 +136,6 @@ menu_icon: house-door
       <p>The <a href="{{ '/2026/agenda/' | relative_url }}">full agenda</a> and the <a href="{{ '/2026/videos-slides/' | relative_url }}">slides and recordings</a> from last February remain online.</p>
     </div>
     <div>
-      <h4>Where's the Data Day</h4>
-      <p>The self-run day for research groups <a href="{{ '/where-is-the-data-day/' | relative_url }}">returns in 2027</a>, with a new name to match the theme.</p>
-    </div>
-    <div>
       <h4>Love Data Week worldwide</h4>
       <p>Hundreds of institutions take part each February. See the <a href="https://www.icpsr.umich.edu/sites/icpsr/about/news-events/international-love-data-week">international listing</a>.</p>
     </div>
