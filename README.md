@@ -99,7 +99,7 @@ Main settings to update:
 Key pages to customize:
 
 - **`index.md`** - Homepage/landing page
-- **`agenda.md`** - Event schedule; currently contains the 2026 agenda
+- **`agenda.md`** - Current event schedule
 - **`registration.md`** - Disabled registration page template; excluded from the build
 - **`activities.md`** - Global activities; currently contains 2026 content
 - **`about.md`** - Information about the event and organizing team
@@ -202,7 +202,7 @@ The site normally rebuilds and deploys within a few minutes after a merge. Force
 .
 ├── 2026/                    # Archived 2026 event pages
 ├── index.md                 # Current event homepage
-├── agenda.md                # Unversioned agenda (currently 2026)
+├── agenda.md                # Current event agenda
 ├── videos-slides.md         # Unversioned recordings (currently 2026)
 ├── about.md                 # General event and team information
 ├── _config.yml              # Main configuration file
