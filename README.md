@@ -193,7 +193,7 @@ The `main` branch is the GitHub Pages publishing source. Use a short-lived branc
    ```
 4. Open a pull request against `main` and optionally request a review.
 
-> [!IMORTANT]
+> [!IMPORTANT]
 > By defualt it will pull request against `JGIBristol/hackathon-template` beacuse this repo is folked from it, so make sure that you pull request agains the `main` of this repo.
 
 5. After merging, check the live site and delete the branch.
