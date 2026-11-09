@@ -133,7 +133,7 @@ menu_icon: house-door
   <section class="notes">
     <div>
       <h4>Everything from 2026 is still here</h4>
-      <p>The <a href="{{ '/agenda/' | relative_url }}">full agenda</a> and the <a href="{{ '/videos-slides/' | relative_url }}">slides and recordings</a> from last February remain online.</p>
+      <p>The <a href="{{ '/2026/agenda/' | relative_url }}">full agenda</a> and the <a href="{{ '/2026/videos-slides/' | relative_url }}">slides and recordings</a> from last February remain online.</p>
     </div>
     <div>
       <h4>Where's the Data Day</h4>

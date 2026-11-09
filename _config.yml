@@ -121,7 +121,7 @@ header_pages:
   - activities.md
   - videos-slides.md
   - about.md
-  - home_2026.md
+  - 2026/index.md
 
 # Event status
 #   soon = event is yet to happen
@@ -169,4 +169,3 @@ kramdown:
 #Testing width change in Agenda page
 sass:
   style: compressed
-
