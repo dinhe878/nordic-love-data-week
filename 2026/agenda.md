@@ -1,6 +1,6 @@
 ---
 title: Nordic Love Data Week Agenda 2026
-menu_title: Agenda 2026
+menu_title: Agenda
 menu_icon: clock
 year: 2026
 ---

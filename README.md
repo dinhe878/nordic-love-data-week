@@ -101,10 +101,9 @@ Key pages to customize:
 - **`index.md`** - Homepage/landing page
 - **`agenda.md`** - Current event schedule
 - **`registration.md`** - Disabled registration page template; excluded from the build
-- **`activities.md`** - Global activities; currently contains 2026 content
+- **`2027/activities.md`** - Placeholder for current global activities
 - **`about.md`** - Information about the event and organizing team
-- **`videos-slides.md`** - Event recordings and presentation slides; currently contains 2026 content
-- **`where-is-the-data-day.md`** - Where's the Data Day; currently contains 2026 content
+- **`2027/videos-slides.md`** - Placeholder for current event recordings and presentation slides
 - **`2026/`** - Archived 2026 event pages
 - **`code-of-conduct.md`** - Event code of conduct
 - **`faq.md`** - Frequently asked questions
@@ -150,6 +149,8 @@ Team members are automatically displayed on the `about.md` page.
 
 ### Adding Navigation Pages
 
+The current site uses `header_pages`, while pages under `/2026/` use `archive_2026_header_pages`. The 2026 archive navigation links to its own Home, Agenda, Where's the Data Day, Global activities, and Videos & slides pages, plus a link back to the current event. On narrow screens, use the menu button to open the navigation.
+
 1. Create a new Markdown file in an appropriate location
 2. Add front matter with `menu_title` and `menu_icon` (Bootstrap Icons):
    ```markdown
@@ -159,7 +160,9 @@ Team members are automatically displayed on the `about.md` page.
    menu_icon: icon-name
    ---
    ```
-3. Add the source path to `header_pages` in `_config.yml`
+3. Add the source path to `header_pages` in `_config.yml` for current-event navigation, or `archive_2026_header_pages` for 2026 archive navigation.
+
+Restart the local Jekyll server after changing `_config.yml`. Current-event navigation respects a page's `event_status` front matter; archive navigation remains visible regardless of the current event status.
 
 ### Useful Liquid Tags
 
@@ -207,7 +210,10 @@ The site normally rebuilds and deploys within a few minutes after a merge. Force
 ├── 2026/                    # Archived 2026 event pages
 ├── index.md                 # Current event homepage
 ├── agenda.md                # Current event agenda
-├── videos-slides.md         # Unversioned recordings (currently 2026)
+├── 2027/                    # Current-event placeholders
+├── activities.md            # Redirect to the 2026 global activities
+├── videos-slides.md         # Redirect to the 2026 recordings
+├── where-is-the-data-day.md # Redirect to the 2026 event
 ├── about.md                 # General event and team information
 ├── _config.yml              # Main configuration file
 ├── _includes/               # Reusable page components
@@ -217,6 +223,7 @@ The site normally rebuilds and deploys within a few minutes after a merge. Force
 │   └── youtube.html
 ├── _layouts/                # Page templates
 │   ├── default.html
+│   ├── archive_redirect.html
 │   ├── project.html
 │   └── notebook.html
 ├── _projects/               # Individual project pages
@@ -234,9 +241,11 @@ The site normally rebuilds and deploys within a few minutes after a merge. Force
 
 ## Yearly Archives
 
-The [2026 archive](https://www.nordiclovedataweek.org/2026/) lives in `2026/`. It has its own copies of the agenda, videos and slides, global activities, and Where's the Data Day pages. The original unversioned pages remain in place for existing links, so changes that should appear in both copies must be applied to both.
+The [2026 archive](https://www.nordiclovedataweek.org/2026/) lives in `2026/` and has its own navigation. It contains the agenda, videos and slides, global activities, and Where's the Data Day pages. The former unversioned URLs for activities, videos and slides, and Where's the Data Day redirect visitors to their 2026 archive pages.
 
-Keep archive links pointed at year-specific pages, and preserve the referenced assets. When moving a page listed in `header_pages`, update its source path in `_config.yml`. Before repurposing an unversioned page for a new year, ensure the previous year's content and links are preserved in its archive.
+The current 2027 homepage and agenda remain at `/` and `/agenda/`. Global activities and videos and slides have placeholders under `/2027/`; replace their content as information becomes available. Where's the Data Day is not included in the 2027 navigation.
+
+Keep archive links pointed at year-specific pages, and preserve the referenced assets. When moving a navigation page, update its source path in the appropriate list in `_config.yml`. Before repurposing an unversioned page for a new year, ensure the previous year's content and links are preserved in its archive.
 
 ## Acknowledgements
 

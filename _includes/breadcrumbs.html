@@ -2,6 +2,7 @@
 {% unless page.url == "/" %}
     <div id="breadcrumbs">
         {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+        {% assign current_year = site.event_year | append: "" %}
         <a href="{{ site.baseurl }}/">Home</a>
         {% for crumb in crumbs offset: 1 %}
             {% if forloop.last %}
@@ -9,7 +10,11 @@
                     / {{ page.title }}
                 {% endif %}
             {% else %}
-                / <a href="{{ site.baseurl }}{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>
+                {% if page.year == site.event_year and forloop.first and crumb == current_year %}
+                    / <a href="{{ '/' | relative_url }}">Current event</a>
+                {% else %}
+                    / <a href="{{ site.baseurl }}{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a>
+                {% endif %}
             {% endif %}
         {% endfor %}
     </div>
