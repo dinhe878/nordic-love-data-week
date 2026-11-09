@@ -175,15 +175,15 @@ See [Jekyll Liquid documentation](https://jekyllrb.com/docs/liquid/) for more.
 
 ## Publishing Changes
 
-After making changes locally and testing:
+After making changes on a branch and testing:
 
 ```bash
 git add .
 git commit -m "Describe your changes"
-git push
+git push -u origin <branch-name>
 ```
 
-The site will automatically rebuild and deploy to GitHub Pages (usually within a few minutes). Force-refresh your browser to see changes.
+Open a pull request and request review. After the pull request is merged into `main`, the site will automatically rebuild and deploy to GitHub Pages (usually within a few minutes). Force-refresh your browser to see changes.
 
 ## Project Structure
 
@@ -217,10 +217,18 @@ The site will automatically rebuild and deploy to GitHub Pages (usually within a
 
 To contribute to this website:
 
-1. Create a branch for your changes
-2. Make edits and test locally
-3. Commit and push your changes
-4. Submit a pull request
+1. Update `main` and create a short-lived branch for your changes, such as `content/2027-agenda` or `fix/navigation-links`.
+2. Make edits and test locally with `bundle exec jekyll build` and `bundle exec jekyll serve`.
+3. Commit and push your branch.
+4. Submit a pull request for review. Once merged, delete the branch.
+
+The `main` branch is the GitHub Pages publishing source; merged changes are published to the live website.
+
+### Yearly archives
+
+The 2026 archive lives in `2026/` and is published under `/2026/`. It has its own copies of the agenda, videos and slides, global activities, and Where's the Data Day pages. The original unversioned pages remain in place for existing links, so changes that should appear in both copies must be applied to both.
+
+Keep archive links pointed at year-specific pages, and preserve the referenced assets. When moving a page listed in `header_pages`, update its source path in `_config.yml`. Before repurposing an unversioned page for a new year, ensure the previous year's content and links are preserved in its archive.
 
 ## Acknowledgements
 
@@ -236,4 +244,3 @@ See the [LICENSE](LICENSE) file for details.
 
 For questions about the Nordic Love Data Week, please contact:  
 **{{ site.author }}** - [{{ site.mailbox_address }}](mailto:{{ site.mailbox_address }})
-
