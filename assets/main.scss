@@ -347,7 +347,11 @@ ul.grid {
 
 /* Column 1: Time */
 .agenda tr > *:nth-child(1) {
-  width: 9%;
+  width: 9em;
+}
+
+.agenda td:first-child {
+  white-space: nowrap;
 }
 
 /* Column 2: Event Title */
@@ -413,7 +417,7 @@ ul.grid {
 
   /* Agenda table specific - label each cell based on position */
   .agenda td:nth-child(1)::before {
-    content: "Time";
+    content: "Time (CET)";
     display: block;
     font-weight: bold;
     margin-bottom: 0.25em;
